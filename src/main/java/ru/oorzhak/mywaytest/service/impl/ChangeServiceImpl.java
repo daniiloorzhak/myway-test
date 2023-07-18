@@ -22,7 +22,7 @@ public class ChangeServiceImpl implements ChangeService {
     }
 
     @Override
-    public Long update(Long value) {
-        return changeRepository.save(Change.builder().value(value).build()).getValue();
+    public void update(Long value) {
+        changeRepository.save(Change.builder().value(value).build());
     }
 }

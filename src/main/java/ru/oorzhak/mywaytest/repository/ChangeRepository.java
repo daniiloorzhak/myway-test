@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface ChangeRepository extends JpaRepository<Change, Long> {
     Boolean existsByValue(Long value);
     Optional<Change> findByValue(Long value);
+    Optional<Change> findTopByOrderByIdDesc();
 }

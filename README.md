@@ -1,6 +1,6 @@
 # MyWay-test
 
-## To run application input commands down below
+## To run application
 > ./mvnw clean spring-boot:run
 
 ## To run tests

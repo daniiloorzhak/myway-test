@@ -1,7 +1,6 @@
 package ru.oorzhak.mywaytest.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -24,7 +23,3 @@ public class Change {
     @Column(name = "created_at", nullable = false)
     private Date createdAt;
 }
-
-
-
-

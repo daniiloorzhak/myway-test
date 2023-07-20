@@ -6,6 +6,9 @@ import ru.oorzhak.mywaytest.model.Change;
 import ru.oorzhak.mywaytest.repository.ChangeRepository;
 import ru.oorzhak.mywaytest.service.ChangeService;
 
+import java.util.Objects;
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class ChangeServiceImpl implements ChangeService {
@@ -23,6 +26,11 @@ public class ChangeServiceImpl implements ChangeService {
 
     @Override
     public void update(Long value) {
+        Optional<Change> lastDbRecord = changeRepository.findTopByOrderByIdDesc();
+        if (lastDbRecord.isPresent()
+                && Objects.equals(lastDbRecord.get().getValue(), value)) {
+            return;
+        }
         changeRepository.save(Change.builder().value(value).build());
     }
 }

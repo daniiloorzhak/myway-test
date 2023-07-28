@@ -1,4 +1,4 @@
-# MyWay-test
+# Vaadin-test
 
 ## To run application
 > ./mvnw clean spring-boot:run
